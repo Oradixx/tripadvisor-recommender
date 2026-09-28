@@ -1,0 +1,570 @@
+{
+  "random_splits": 20,
+  "selected": "fusion_tfidf_centroid",
+  "selection_rule": "lowest level-2 ranking error on validation",
+  "places": 1835,
+  "queries": 917,
+  "catalogue": 918,
+  "models": {
+    "bm25_course": {
+      "description": "BM25 baseline of the course (whitespace tokens, k1=1.5, b=0.75)",
+      "reviews_per_place": 10,
+      "validation": {
+        "level1": 1.0167394468704511,
+        "level2": 11.736701488784226
+      },
+      "test": {
+        "level1": {
+          "ranking_error": 0.6128680479825518,
+          "median": 0.0,
+          "hit_at_1": 0.8560523446019629,
+          "mrr": 0.9022860010333466,
+          "queries": 917,
+          "random_ranking_error": 3.427664648703301,
+          "by_type": {
+            "A": {
+              "ranking_error": 3.5078125,
+              "queries": 128
+            },
+            "AP": {
+              "ranking_error": 0.1377245508982036,
+              "queries": 501
+            },
+            "H": {
+              "ranking_error": 0.0,
+              "queries": 34
+            },
+            "R": {
+              "ranking_error": 0.1732283464566929,
+              "queries": 254
+            }
+          }
+        },
+        "level2": {
+          "ranking_error": 7.403381642512077,
+          "median": 0.0,
+          "hit_at_1": 0.7222222222222222,
+          "mrr": 0.7921889856622785,
+          "queries": 414,
+          "random_ranking_error": 30.425079927459088,
+          "by_type": {
+            "A": {
+              "ranking_error": 20.7265625,
+              "queries": 128
+            },
+            "H": {
+              "ranking_error": 0.84375,
+              "queries": 32
+            },
+            "R": {
+              "ranking_error": 1.515748031496063,
+              "queries": 254
+            }
+          }
+        }
+      },
+      "random_splits": {
+        "level1": {
+          "mean": 0.8250272628135222,
+          "std": 0.17917538363858046,
+          "beats_bm25_course": 0.0
+        },
+        "level2": {
+          "mean": 7.853169117785322,
+          "std": 2.5939883513967144,
+          "beats_bm25_course": 0.0
+        }
+      }
+    },
+    "tfidf_course": {
+      "description": "Course model: TF-IDF, 1 000 words, English stop words",
+      "reviews_per_place": 10,
+      "validation": {
+        "level1": 0.8136826783114993,
+        "level2": 6.371288684937291
+      },
+      "test": {
+        "level1": {
+          "ranking_error": 0.8047982551799345,
+          "median": 0.0,
+          "hit_at_1": 0.8560523446019629,
+          "mrr": 0.9040013149232118,
+          "queries": 917,
+          "random_ranking_error": 3.427664648703301,
+          "by_type": {
+            "A": {
+              "ranking_error": 4.8515625,
+              "queries": 128
+            },
+            "AP": {
+              "ranking_error": 0.13572854291417166,
+              "queries": 501
+            },
+            "H": {
+              "ranking_error": 0.0,
+              "queries": 34
+            },
+            "R": {
+              "ranking_error": 0.19291338582677164,
+              "queries": 254
+            }
+          }
+        },
+        "level2": {
+          "ranking_error": 4.161835748792271,
+          "median": 0.0,
+          "hit_at_1": 0.7004830917874396,
+          "mrr": 0.7805047467269541,
+          "queries": 414,
+          "random_ranking_error": 30.425079927459088,
+          "by_type": {
+            "A": {
+              "ranking_error": 11.6328125,
+              "queries": 128
+            },
+            "H": {
+              "ranking_error": 1.78125,
+              "queries": 32
+            },
+            "R": {
+              "ranking_error": 0.6968503937007874,
+              "queries": 254
+            }
+          }
+        }
+      },
+      "random_splits": {
+        "level1": {
+          "mean": 0.7953107960741548,
+          "std": 0.1773322609717466,
+          "beats_bm25_course": 0.6
+        },
+        "level2": {
+          "mean": 6.210811285591473,
+          "std": 1.5702087044979938,
+          "beats_bm25_course": 0.8
+        }
+      }
+    },
+    "bm25_words": {
+      "description": "BM25 with a cleaner tokenizer (letters only, stop words removed)",
+      "reviews_per_place": 10,
+      "validation": {
+        "level1": 0.6375545851528385,
+        "level2": 8.312235546803793
+      },
+      "test": {
+        "level1": {
+          "ranking_error": 0.6248636859323882,
+          "median": 0.0,
+          "hit_at_1": 0.8680479825517994,
+          "mrr": 0.9116688267983138,
+          "queries": 917,
+          "random_ranking_error": 3.427664648703301,
+          "by_type": {
+            "A": {
+              "ranking_error": 3.6328125,
+              "queries": 128
+            },
+            "AP": {
+              "ranking_error": 0.12375249500998003,
+              "queries": 501
+            },
+            "H": {
+              "ranking_error": 0.0,
+              "queries": 34
+            },
+            "R": {
+              "ranking_error": 0.18110236220472442,
+              "queries": 254
+            }
+          }
+        },
+        "level2": {
+          "ranking_error": 3.3719806763285023,
+          "median": 0.0,
+          "hit_at_1": 0.7294685990338164,
+          "mrr": 0.7992200072784064,
+          "queries": 414,
+          "random_ranking_error": 30.425079927459088,
+          "by_type": {
+            "A": {
+              "ranking_error": 7.859375,
+              "queries": 128
+            },
+            "H": {
+              "ranking_error": 1.21875,
+              "queries": 32
+            },
+            "R": {
+              "ranking_error": 1.3818897637795275,
+              "queries": 254
+            }
+          }
+        }
+      },
+      "random_splits": {
+        "level1": {
+          "mean": 0.6600872410032715,
+          "std": 0.12224013244900753,
+          "beats_bm25_course": 0.9
+        },
+        "level2": {
+          "mean": 5.106042172333003,
+          "std": 1.8088902477835869,
+          "beats_bm25_course": 1.0
+        }
+      }
+    },
+    "tfidf_tuned": {
+      "description": "TF-IDF on the full vocabulary, sublinear tf, min_df=2, max_df=0.5",
+      "reviews_per_place": 10,
+      "validation": {
+        "level1": 0.6513828238719068,
+        "level2": 6.0414134623906
+      },
+      "test": {
+        "level1": {
+          "ranking_error": 0.6630316248636859,
+          "median": 0.0,
+          "hit_at_1": 0.8887677208287895,
+          "mrr": 0.9255861468059638,
+          "queries": 917,
+          "random_ranking_error": 3.427664648703301,
+          "by_type": {
+            "A": {
+              "ranking_error": 4.1796875,
+              "queries": 128
+            },
+            "AP": {
+              "ranking_error": 0.0718562874251497,
+              "queries": 501
+            },
+            "H": {
+              "ranking_error": 0.029411764705882353,
+              "queries": 34
+            },
+            "R": {
+              "ranking_error": 0.14173228346456693,
+              "queries": 254
+            }
+          }
+        },
+        "level2": {
+          "ranking_error": 3.4589371980676327,
+          "median": 0.0,
+          "hit_at_1": 0.7198067632850241,
+          "mrr": 0.7993711079833012,
+          "queries": 414,
+          "random_ranking_error": 30.425079927459088,
+          "by_type": {
+            "A": {
+              "ranking_error": 9.1640625,
+              "queries": 128
+            },
+            "H": {
+              "ranking_error": 1.6875,
+              "queries": 32
+            },
+            "R": {
+              "ranking_error": 0.8070866141732284,
+              "queries": 254
+            }
+          }
+        }
+      },
+      "random_splits": {
+        "level1": {
+          "mean": 0.6935114503816794,
+          "std": 0.101667399868662,
+          "beats_bm25_course": 0.95
+        },
+        "level2": {
+          "mean": 5.260540143639355,
+          "std": 1.5092417012914543,
+          "beats_bm25_course": 0.9
+        }
+      }
+    },
+    "tfidf_tuned_30": {
+      "description": "Same, 30 reviews per place",
+      "reviews_per_place": 30,
+      "validation": {
+        "level1": 0.5807860262008734,
+        "level2": 6.572900387704975
+      },
+      "test": {
+        "level1": {
+          "ranking_error": 0.6826608505997819,
+          "median": 0.0,
+          "hit_at_1": 0.8800436205016358,
+          "mrr": 0.9231685023043034,
+          "queries": 917,
+          "random_ranking_error": 3.427664648703301,
+          "by_type": {
+            "A": {
+              "ranking_error": 4.0390625,
+              "queries": 128
+            },
+            "AP": {
+              "ranking_error": 0.11976047904191617,
+              "queries": 501
+            },
+            "H": {
+              "ranking_error": 0.08823529411764706,
+              "queries": 34
+            },
+            "R": {
+              "ranking_error": 0.18110236220472442,
+              "queries": 254
+            }
+          }
+        },
+        "level2": {
+          "ranking_error": 2.7657004830917873,
+          "median": 0.0,
+          "hit_at_1": 0.7270531400966184,
+          "mrr": 0.8120562754025417,
+          "queries": 414,
+          "random_ranking_error": 30.425079927459088,
+          "by_type": {
+            "A": {
+              "ranking_error": 7.3203125,
+              "queries": 128
+            },
+            "H": {
+              "ranking_error": 1.34375,
+              "queries": 32
+            },
+            "R": {
+              "ranking_error": 0.6496062992125984,
+              "queries": 254
+            }
+          }
+        }
+      },
+      "random_splits": {
+        "level1": {
+          "mean": 0.6977644492911668,
+          "std": 0.1381823011903803,
+          "beats_bm25_course": 0.8
+        },
+        "level2": {
+          "mean": 5.171944714155159,
+          "std": 1.5210762743838504,
+          "beats_bm25_course": 0.95
+        }
+      }
+    },
+    "lsa_200": {
+      "description": "Tuned TF-IDF reduced to 200 latent dimensions (LSA)",
+      "reviews_per_place": 10,
+      "validation": {
+        "level1": 0.8034934497816595,
+        "level2": 6.848756044155569
+      },
+      "test": {
+        "level1": {
+          "ranking_error": 0.697928026172301,
+          "median": 0.0,
+          "hit_at_1": 0.8789531079607416,
+          "mrr": 0.9191032828808366,
+          "queries": 917,
+          "random_ranking_error": 3.427664648703301,
+          "by_type": {
+            "A": {
+              "ranking_error": 4.09375,
+              "queries": 128
+            },
+            "AP": {
+              "ranking_error": 0.13373253493013973,
+              "queries": 501
+            },
+            "H": {
+              "ranking_error": 0.11764705882352941,
+              "queries": 34
+            },
+            "R": {
+              "ranking_error": 0.17716535433070865,
+              "queries": 254
+            }
+          }
+        },
+        "level2": {
+          "ranking_error": 3.6690821256038646,
+          "median": 0.0,
+          "hit_at_1": 0.7342995169082126,
+          "mrr": 0.8049462716724307,
+          "queries": 414,
+          "random_ranking_error": 30.425079927459088,
+          "by_type": {
+            "A": {
+              "ranking_error": 10.1640625,
+              "queries": 128
+            },
+            "H": {
+              "ranking_error": 1.75,
+              "queries": 32
+            },
+            "R": {
+              "ranking_error": 0.6377952755905512,
+              "queries": 254
+            }
+          }
+        }
+      },
+      "random_splits": {
+        "level1": {
+          "mean": 0.7842420937840784,
+          "std": 0.12191192528253504,
+          "beats_bm25_course": 0.55
+        },
+        "level2": {
+          "mean": 5.2107519568590615,
+          "std": 1.2600260721011947,
+          "beats_bm25_course": 1.0
+        }
+      }
+    },
+    "centroid": {
+      "description": "Mean of the TF-IDF vectors of each review",
+      "reviews_per_place": 10,
+      "validation": {
+        "level1": 0.6979621542940319,
+        "level2": 5.894385266778634
+      },
+      "test": {
+        "level1": {
+          "ranking_error": 0.6892039258451472,
+          "median": 0.0,
+          "hit_at_1": 0.8767720828789531,
+          "mrr": 0.9189419435684228,
+          "queries": 917,
+          "random_ranking_error": 3.427664648703301,
+          "by_type": {
+            "A": {
+              "ranking_error": 4.359375,
+              "queries": 128
+            },
+            "AP": {
+              "ranking_error": 0.07984031936127745,
+              "queries": 501
+            },
+            "H": {
+              "ranking_error": 0.029411764705882353,
+              "queries": 34
+            },
+            "R": {
+              "ranking_error": 0.12992125984251968,
+              "queries": 254
+            }
+          }
+        },
+        "level2": {
+          "ranking_error": 4.743961352657005,
+          "median": 0.0,
+          "hit_at_1": 0.7222222222222222,
+          "mrr": 0.7971452474274071,
+          "queries": 414,
+          "random_ranking_error": 30.425079927459088,
+          "by_type": {
+            "A": {
+              "ranking_error": 13.390625,
+              "queries": 128
+            },
+            "H": {
+              "ranking_error": 2.0,
+              "queries": 32
+            },
+            "R": {
+              "ranking_error": 0.7322834645669292,
+              "queries": 254
+            }
+          }
+        }
+      },
+      "random_splits": {
+        "level1": {
+          "mean": 0.7525081788440566,
+          "std": 0.1649821408590748,
+          "beats_bm25_course": 0.75
+        },
+        "level2": {
+          "mean": 5.878734257255681,
+          "std": 1.4946939759130518,
+          "beats_bm25_course": 0.75
+        }
+      }
+    },
+    "fusion_tfidf_centroid": {
+      "description": "Reciprocal rank fusion of tuned TF-IDF and centroid",
+      "reviews_per_place": 10,
+      "validation": {
+        "level1": 0.6280931586608443,
+        "level2": 5.669380853671452
+      },
+      "test": {
+        "level1": {
+          "ranking_error": 0.6815703380588877,
+          "median": 0.0,
+          "hit_at_1": 0.8876772082878953,
+          "mrr": 0.9245306376256084,
+          "queries": 917,
+          "random_ranking_error": 3.427664648703301,
+          "by_type": {
+            "A": {
+              "ranking_error": 4.3671875,
+              "queries": 128
+            },
+            "AP": {
+              "ranking_error": 0.08782435129740519,
+              "queries": 501
+            },
+            "H": {
+              "ranking_error": 0.029411764705882353,
+              "queries": 34
+            },
+            "R": {
+              "ranking_error": 0.08267716535433071,
+              "queries": 254
+            }
+          }
+        },
+        "level2": {
+          "ranking_error": 3.9589371980676327,
+          "median": 0.0,
+          "hit_at_1": 0.7391304347826086,
+          "mrr": 0.8091085570046613,
+          "queries": 414,
+          "random_ranking_error": 30.425079927459088,
+          "by_type": {
+            "A": {
+              "ranking_error": 10.8203125,
+              "queries": 128
+            },
+            "H": {
+              "ranking_error": 1.59375,
+              "queries": 32
+            },
+            "R": {
+              "ranking_error": 0.7992125984251969,
+              "queries": 254
+            }
+          }
+        }
+      },
+      "random_splits": {
+        "level1": {
+          "mean": 0.7193020719738277,
+          "std": 0.12388884818025127,
+          "beats_bm25_course": 0.85
+        },
+        "level2": {
+          "mean": 5.48323710768928,
+          "std": 1.5523167901017563,
+          "beats_bm25_course": 0.8
+        }
+      }
+    }
+  }
+}
